@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">AI-Powered</span>
+                        Phishing Detection
+                    </h1>
+                    <p class="hero-subtitle">
+                        Advanced Machine Learning & NLP technology to protect against sophisticated email threats. 
+                        Real-time analysis with 99.2% accuracy.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="99.2">0</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="50">0</div>
+                            <div class="stat-label">Features Analyzed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="2.5">0</div>
+                            <div class="stat-label">Seconds Analysis</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-visual">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-shield-check"></i>
+                        <span>Secure</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-brain"></i>
+                        <span>AI Powered</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-bolt"></i>
+                        <span>Fast</span>
+                    </div>
+                    <div class="main-visual">
+                        <img src="{{ url_for('static', filename='images/image1.jpeg') }}" alt="Email Protection" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Analysis Section -->
+<section class="analysis-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="analysis-card">
+                    <div class="card-header-gradient">
+                        <h3><i class="fas fa-search-plus"></i> Advanced Email Analysis</h3>
+                        <p>Multi-layer AI detection for comprehensive threat assessment</p>
+                    </div>
+                    
+                    <div class="card-body">
+                        <!-- Analysis Tabs -->
+                        <ul class="nav nav-pills mb-4" id="analysisTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="paste-tab" data-bs-toggle="pill" data-bs-target="#paste" type="button" role="tab">
+                                    <i class="fas fa-paste"></i> Paste Email
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="file-tab" data-bs-toggle="pill" data-bs-target="#file" type="button" role="tab">
+                                    <i class="fas fa-file-upload"></i> Upload File
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="url-tab" data-bs-toggle="pill" data-bs-target="#url" type="button" role="tab">
+                                    <i class="fas fa-link"></i> URL Analysis
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="analysisTabsContent">
+                            <!-- Paste Tab -->
+                            <div class="tab-pane fade show active" id="paste" role="tabpanel">
+                                <form method="POST" action="{{ url_for('analyze') }}" id="pasteForm">
+                                    <input type="hidden" name="analysis_type" value="text">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-envelope"></i> Paste Complete Email Content
+                                        </label>
+                                        <textarea class="form-control advanced-textarea" name="email_content" 
+                                                  rows="12" placeholder="Paste headers and body content here..."></textarea>
+                                        <div class="textarea-footer">
+                                            <span class="char-count">0 characters</span>
+                                            <div class="textarea-actions">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" id="clearText">
+                                                    <i class="fas fa-eraser"></i> Clear
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary btn-analyze" id="analyzeTextBtn">
+                                            <i class="fas fa-search"></i> 
+                                            <span class="btn-text">Analyze Email</span>
+                                            <div class="btn-loader">
+                                                <div class="spinner"></div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- File Upload Tab -->
+                            <div class="tab-pane fade" id="file" role="tabpanel">
+                                <form method="POST" action="{{ url_for('analyze') }}" enctype="multipart/form-data" id="fileForm">
+                                    <input type="hidden" name="analysis_type" value="file">
+                                    <div class="upload-area" id="uploadArea">
+                                        <div class="upload-content">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <h5>Upload .eml File</h5>
+                                            <p>Drag & drop or click to browse</p>
+                                            <input type="file" name="email_file" accept=".eml" id="fileInput" hidden>
+                                            <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('fileInput').click()">
+                                                Choose File
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="file-preview" id="filePreview"></div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary btn-analyze" id="analyzeFileBtn">
+                                            <i class="fas fa-search"></i> 
+                                            <span class="btn-text">Analyze File</span>
+                                            <div class="btn-loader">
+                                                <div class="spinner"></div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- URL Analysis Tab -->
+                            <div class="tab-pane fade" id="url" role="tabpanel">
+                                <form id="urlForm">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-link"></i> Enter Suspicious URL
+                                        </label>
+                                        <input type="url" class="form-control" placeholder="https://suspicious-domain.com" id="urlInput">
+                                        <div class="form-text">We'll analyze the URL structure and reputation</div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-search"></i> Analyze URL
+                                        </button>
+                                    </div>
+                                </form>
+                                <div class="url-results mt-4" id="urlResults"></div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="quick-actions">
+                            <button class="btn btn-outline-warning" id="loadExample">
+                                <i class="fas fa-lightbulb"></i> Load Example Phishing Email
+                            </button>
+                            <button class="btn btn-outline-info" id="bulkAnalysis">
+                                <i class="fas fa-layer-group"></i> Bulk Analysis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Advanced AI Detection Features</h2>
+            <p>Multi-layer analysis combining traditional and modern techniques</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h4>NLP Content Analysis</h4>
+                <p>Advanced sentiment analysis, keyword pattern matching, and semantic understanding using transformer models.</p>
+                <ul>
+                    <li>BERT-based text classification</li>
+                    <li>Sentiment & urgency detection</li>
+                    <li>Grammar anomaly detection</li>
+                </ul>
+            </div>
+            
+            <div class="col-md-4 feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h4>Neural Network Models</h4>
+                <p>Deep learning models trained on millions of emails for superior pattern recognition and threat detection.</p>
+                <ul>
+                    <li>CNN for text classification</li>
+                    <li>LSTM for sequence analysis</li>
+                    <li>Ensemble learning</li>
+                </ul>
+            </div>
+            
+            <div class="col-md-4 feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>Real-time Threat Intel</h4>
+                <p>Integration with global threat intelligence feeds and real-time reputation scoring systems.</p>
+                <ul>
+                    <li>VirusTotal integration</li>
+                    <li>URLhaus database</li>
+                    <li>Custom threat feeds</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Live Demo Section -->
+<section class="demo-section">
+    <div class="container">
+        <div class="demo-card">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3>See it in Action</h3>
+                    <p>Watch how our AI detects sophisticated phishing attempts in real-time.</p>
+                    <div class="demo-features">
+                        <div class="demo-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Real-time analysis visualization</span>
+                        </div>
+                        <div class="demo-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Feature importance scoring</span>
+                        </div>
+                        <div class="demo-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Interactive threat breakdown</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="demo-visual">
+                        <div class="scanning-animation">
+                            <div class="scan-line"></div>
+                            <div class="email-visual">
+                                <div class="email-header"></div>
+                                <div class="email-body">
+                                    <div class="scan-point point-1"></div>
+                                    <div class="scan-point point-2"></div>
+                                    <div class="scan-point point-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

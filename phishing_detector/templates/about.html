@@ -1,0 +1,419 @@
+{% extends "base.html" %}
+
+{% block title %}About - Phishing Detector{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-10 mx-auto">
+        <!-- Hero Section -->
+        <div class="card shadow mb-4">
+            <div class="card-header bg-primary text-white">
+                <h1 class="mb-0"><i class="fas fa-shield-alt"></i> About Phishing Email Detection System</h1>
+            </div>
+            <div class="card-body">
+                <p class="lead">
+                    An intelligent cybersecurity solution leveraging cutting-edge Natural Language Processing (NLP) 
+                    and Machine Learning (ML) algorithms to protect users from sophisticated phishing and spam attacks.
+                </p>
+                <div class="row text-center mt-4">
+                    <div class="col-md-3">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain fa-3x text-primary"></i>
+                        </div>
+                        <h5>AI-Powered</h5>
+                        <p>Advanced ML models for accurate detection</p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-icon">
+                            <i class="fas fa-language fa-3x text-success"></i>
+                        </div>
+                        <h5>NLP Analysis</h5>
+                        <p>Deep content and semantic analysis</p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt fa-3x text-warning"></i>
+                        </div>
+                        <h5>Real-Time</h5>
+                        <p>Instant analysis and threat assessment</p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line fa-3x text-info"></i>
+                        </div>
+                        <h5>Multi-Layer</h5>
+                        <p>Comprehensive feature extraction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Overview -->
+        <div class="card shadow mb-4">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0"><i class="fas fa-project-diagram"></i> Project Overview</h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    This project addresses the growing threat of phishing emails that bypass traditional security filters. 
+                    By combining multiple detection approaches, we create a robust defense system against social engineering attacks.
+                </p>
+                
+                <h5>Key Objectives:</h5>
+                <ul>
+                    <li>Detect sophisticated phishing attempts with high accuracy</li>
+                    <li>Analyze email content, headers, and metadata comprehensively</li>
+                    <li>Provide real-time threat assessment with detailed explanations</li>
+                    <li>Offer an intuitive interface for both technical and non-technical users</li>
+                    <li>Support continuous learning and model improvement</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="card shadow mb-4">
+            <div class="card-header bg-success text-white">
+                <h3 class="mb-0"><i class="fas fa-layer-group"></i> Technology Stack & Architecture</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Core Technologies:</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <strong>Flask Web Framework</strong> - Lightweight and scalable web application
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Scikit-Learn</strong> - Machine learning algorithms and model training
+                            </li>
+                            <li class="list-group-item">
+                                <strong>NLTK & Text Processing</strong> - Natural language understanding
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Bootstrap 5</strong> - Responsive and modern user interface
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Joblib</strong> - Model serialization and persistence
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>ML Algorithms Used:</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <strong>Support Vector Machines (SVM)</strong> - High-accuracy classification
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Random Forest</strong> - Ensemble learning for robust detection
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Neural Networks</strong> - Deep learning for pattern recognition
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Naive Bayes</strong> - Probabilistic text classification
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Analysis Details -->
+        <div class="card shadow mb-4">
+            <div class="card-header bg-warning text-dark">
+                <h3 class="mb-0"><i class="fas fa-search-plus"></i> Comprehensive Feature Analysis</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0"><i class="fas fa-envelope"></i> Header & Metadata Analysis</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>Sender Authentication:</strong> SPF, DKIM, DMARC verification</li>
+                                    <li><strong>Domain Analysis:</strong> Typosquatting detection, suspicious TLDs</li>
+                                    <li><strong>Header Consistency:</strong> Reply-To mismatches, forged headers</li>
+                                    <li><strong>Timestamp Analysis:</strong> Unusual sending patterns</li>
+                                    <li><strong>Routing Analysis:</strong> Suspicious mail server paths</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0"><i class="fas fa-file-alt"></i> Content & NLP Analysis</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>Text Vectorization:</strong> TF-IDF, Word2Vec embeddings</li>
+                                    <li><strong>Sentiment Analysis:</strong> Urgency, fear, and threat detection</li>
+                                    <li><strong>Keyword Patterns:</strong> Phishing lexicon matching</li>
+                                    <li><strong>Grammar & Style:</strong> Unusual language patterns</li>
+                                    <li><strong>Structural Analysis:</strong> HTML formatting tricks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0"><i class="fas fa-link"></i> URL & Link Analysis</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>Domain Reputation:</strong> Blacklist checking and reputation scoring</li>
+                                    <li><strong>URL Structure:</strong> IP addresses, URL shortening, suspicious paths</li>
+                                    <li><strong>Redirect Analysis:</strong> Multiple hops and final destination</li>
+                                    <li><strong>Embedded Content:</strong> Malicious scripts and iframes</li>
+                                    <li><strong>Visual Deception:</strong> Homograph attacks and lookalike domains</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0"><i class="fas fa-cogs"></i> Behavioral Analysis</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>Social Engineering Patterns:</strong> Authority impersonation</li>
+                                    <li><strong>Urgency Indicators:</strong> Time-sensitive demands</li>
+                                    <li><strong>Request Analysis:</strong> Credential harvesting attempts</li>
+                                    <li><strong>Attachment Scanning:</strong> Malicious file detection</li>
+                                    <li><strong>Contextual Analysis:</strong> Relationship with previous communications</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison with Other Platforms -->
+        <div class="card shadow mb-4">
+            <div class="card-header bg-danger text-white">
+                <h3 class="mb-0"><i class="fas fa-balance-scale"></i> Comparison with Existing Solutions</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Platform/Approach</th>
+                                <th>Detection Method</th>
+                                <th>Strengths</th>
+                                <th>Limitations</th>
+                                <th>Our Advantage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Traditional Antivirus</strong></td>
+                                <td>Signature-based, Heuristics</td>
+                                <td>Fast, low false positives for known threats</td>
+                                <td>Ineffective against zero-day attacks, easily bypassed</td>
+                                <td>Behavioral analysis, NLP-based detection</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gmail Spam Filter</strong></td>
+                                <td>Rule-based, User feedback</td>
+                                <td>High volume processing, good for common spam</td>
+                                <td>Limited against targeted spear phishing</td>
+                                <td>Deep content analysis, contextual understanding</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Microsoft Defender</strong></td>
+                                <td>ML models, Threat intelligence</td>
+                                <td>Enterprise integration, comprehensive suite</td>
+                                <td>Complex setup, resource intensive</td>
+                                <td>Lightweight, focused specifically on email threats</td>
+                            </tr>
+                            <tr>
+                                <td><strong>OpenDNS PhishTank</strong></td>
+                                <td>Crowdsourced blacklists</td>
+                                <td>Community-driven, real-time updates</td>
+                                <td>Reactive approach, limited to known sites</td>
+                                <td>Proactive detection, analyzes email content directly</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Commercial Solutions</strong></td>
+                                <td>Multi-layered, AI-powered</td>
+                                <td>Comprehensive protection, support services</td>
+                                <td>Expensive, complex licensing</td>
+                                <td>Open approach, customizable, cost-effective</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Architecture -->
+        <div class="card shadow mb-4">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="mb-0"><i class="fas fa-sitemap"></i> System Architecture</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="architecture-step">
+                            <div class="step-number">1</div>
+                            <h5>Data Ingestion</h5>
+                            <p>Email parsing and normalization from various formats (.eml, raw text)</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> Multi-format support</li>
+                                <li><i class="fas fa-check text-success"></i> Encoding handling</li>
+                                <li><i class="fas fa-check text-success"></i> Attachment extraction</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="architecture-step">
+                            <div class="step-number">2</div>
+                            <h5>Feature Extraction</h5>
+                            <p>Comprehensive analysis across multiple dimensions and threat vectors</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> 50+ feature types</li>
+                                <li><i class="fas fa-check text-success"></i> Real-time processing</li>
+                                <li><i class="fas fa-check text-success"></i> Contextual analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="architecture-step">
+                            <div class="step-number">3</div>
+                            <h5>ML Classification</h5>
+                            <p>Ensemble learning approach combining multiple algorithms for accuracy</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> Multi-model voting</li>
+                                <li><i class="fas fa-check text-success"></i> Confidence scoring</li>
+                                <li><i class="fas fa-check text-success"></i> Adaptive learning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="architecture-step">
+                            <div class="step-number">4</div>
+                            <h5>Result Generation</h5>
+                            <p>Detailed threat assessment with explainable AI for transparency</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> Risk scoring</li>
+                                <li><i class="fas fa-check text-success"></i> Feature importance</li>
+                                <li><i class="fas fa-check text-success"></i> Actionable insights</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="architecture-step">
+                            <div class="step-number">5</div>
+                            <h5>User Interface</h5>
+                            <p>Intuitive dashboard with comprehensive reporting and analysis tools</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> Real-time results</li>
+                                <li><i class="fas fa-check text-success"></i> Historical analysis</li>
+                                <li><i class="fas fa-check text-success"></i> Export capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="architecture-step">
+                            <div class="step-number">6</div>
+                            <h5>API Integration</h5>
+                            <p>RESTful API for seamless integration with existing email infrastructure</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> JSON API</li>
+                                <li><i class="fas fa-check text-success"></i> Webhook support</li>
+                                <li><i class="fas fa-check text-success"></i> Batch processing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Future Enhancements -->
+        <div class="card shadow mb-4">
+            <div class="card-header bg-dark text-white">
+                <h3 class="mb-0"><i class="fas fa-rocket"></i> Future Enhancements & Roadmap</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Short-term Goals (Next 6 months):</h5>
+                        <ul>
+                            <li>Integration with popular email clients (Outlook, Thunderbird)</li>
+                            <li>Enhanced neural network models with transformer architecture</li>
+                            <li>Real-time threat intelligence feeds integration</li>
+                            <li>Multi-language support for global deployment</li>
+                            <li>Mobile application for on-the-go analysis</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Long-term Vision (1-2 years):</h5>
+                        <ul>
+                            <li>Federated learning for privacy-preserving model updates</li>
+                            <li>Blockchain-based threat intelligence sharing</li>
+                            <li>Advanced deepfake and AI-generated content detection</li>
+                            <li>Enterprise-grade deployment with clustering support</li>
+                            <li>Integration with SIEM and SOAR platforms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Considerations -->
+        <div class="card shadow">
+            <div class="card-header bg-warning text-dark">
+                <h3 class="mb-0"><i class="fas fa-exclamation-triangle"></i> Important Security Notes</h3>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <h6><i class="fas fa-info-circle"></i> For Demonstration & Educational Purposes</h6>
+                    <p class="mb-0">
+                        This system is designed as a proof-of-concept and educational tool. For production deployment:
+                    </p>
+                </div>
+                <ul>
+                    <li><strong>Model Training:</strong> Train with comprehensive, diverse datasets including latest phishing techniques</li>
+                    <li><strong>Security Hardening:</strong> Implement proper authentication, rate limiting, and input validation</li>
+                    <li><strong>Compliance:</strong> Ensure compliance with data protection regulations (GDPR, CCPA, etc.)</li>
+                    <li><strong>Monitoring:</strong> Deploy comprehensive logging, monitoring, and alerting systems</li>
+                    <li><strong>Updates:</strong> Maintain regular model retraining and security updates</li>
+                    <li><strong>Testing:</strong> Conduct thorough penetration testing and security audits</li>
+                </ul>
+                <div class="alert alert-success mt-3">
+                    <h6><i class="fas fa-graduation-cap"></i> Educational Value</h6>
+                    <p class="mb-0">
+                        This project demonstrates real-world application of NLP and ML in cybersecurity, 
+                        providing valuable insights into feature engineering, model deployment, and threat analysis.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-5 mb-4">
+            <div class="border-top pt-4">
+                <p class="text-muted">
+                    <i class="fas fa-code"></i> Built with passion for cybersecurity and AI innovation<br>
+                    <strong>© 2024 Phishing Email Detection System | NLP & ML Research Project</strong>
+                </p>
+                <div class="mt-2">
+                    <span class="badge bg-primary">Flask</span>
+                    <span class="badge bg-success">Machine Learning</span>
+                    <span class="badge bg-info">NLP</span>
+                    <span class="badge bg-warning">Cybersecurity</span>
+                    <span class="badge bg-danger">AI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
